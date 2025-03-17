@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9111990792833138988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96947782054831885}
+  - component: {fileID: 2580920148826278404}
+  m_Layer: 0
+  m_Name: TestEnemyObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96947782054831885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9111990792833138988}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2580920148826278404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9111990792833138988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a214244e0bb03418d9810f0ff227e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAnimationDetailsArray:
+  - AnimatorController: {fileID: 9100000, guid: 944ecbb1810696b4a8a6781ac1e002a5, type: 2}
+    spriteColor: {r: 0.91823894, g: 0.91823894, b: 0.47066957, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
+    spriteColor: {r: 0.5437722, g: 0.91764706, b: 0.47058824, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: 0f372b3c644e5ce4a9d95f7f7f25d99a, type: 2}
+    spriteColor: {r: 0.66666657, g: 0.66666657, b: 0.66666657, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: cf2b002105910e04a8f79c160b4602a0, type: 2}
+    spriteColor: {r: 0.34361765, g: 0.91823894, b: 0.8719499, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: 19b6ff9fbadc74e479b63068d33eb245, type: 2}
+    spriteColor: {r: 0.9496855, g: 0.2598195, b: 0.2598195, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: 34e8d9a39874e5e4dafae7864069e02b, type: 2}
+    spriteColor: {r: 1, g: 1, b: 1, a: 1}
+  - AnimatorController: {fileID: 9100000, guid: a0ee566a387dcf744a5564ef5baa059e, type: 2}
+    spriteColor: {r: 0.09616401, g: 0.93710685, b: 0, a: 1}
+  enemyExamplePrefab: {fileID: 1052803170843024483, guid: c2ad11a7fc587c74682e2afd7b128ede, type: 3}
