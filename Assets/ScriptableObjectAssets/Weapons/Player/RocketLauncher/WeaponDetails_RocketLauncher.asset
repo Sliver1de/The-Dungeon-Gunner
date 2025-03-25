@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca75398b5ccf384281acebe0698b2b6, type: 3}
   m_Name: WeaponDetails_RocketLauncher
   m_EditorClassIdentifier: 
-  weaponName: Rocket Launcher
+  weaponName: "\u706B\u7BAD\u70AE\u53D1\u5C04\u5668"
   weaponSprite: {fileID: 21300000, guid: f4a1e113145591f45bfacfc7d7bf80c5, type: 3}
   weaponShootPosition: {x: 1.547, y: 0.306, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 16ed1a0e316f750408798a66c3730910, type: 2}

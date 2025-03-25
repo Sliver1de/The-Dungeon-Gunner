@@ -59,7 +59,7 @@ public class MainMenuUI : MonoBehaviour
 
     private bool isInstructionSceneLoaded = false;
     private bool isHighScoresSceneLoaded = false;
-    
+
     private void Start()
     {
         MusicManager.Instance.PlayMusic(GameResources.Instance.mainMenuMusic, 0f, 2f);

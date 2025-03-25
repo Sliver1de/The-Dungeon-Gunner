@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9104fc4c23814204aab431f20514bbfb, type: 3}
   m_Name: DungeonLevel_Level2
   m_EditorClassIdentifier: 
-  levelName: The Shadow Crypt
+  levelName: "\u6697 \u5F71 \u5730 \u7A74"
   roomTemplateList:
   - {fileID: 11400000, guid: 3cdc996eae718644dad8dad24ae2c39f, type: 2}
   - {fileID: 11400000, guid: 03fb8e6e180566844b9c3942a093676e, type: 2}

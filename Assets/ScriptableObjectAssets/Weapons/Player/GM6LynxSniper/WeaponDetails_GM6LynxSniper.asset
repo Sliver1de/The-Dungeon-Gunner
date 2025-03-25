@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca75398b5ccf384281acebe0698b2b6, type: 3}
   m_Name: WeaponDetails_GM6LynxSniper
   m_EditorClassIdentifier: 
-  weaponName: GM6 Lynx Sniper
+  weaponName: "GM6 \u72D9\u51FB\u67AA"
   weaponSprite: {fileID: 21300000, guid: 7e70ae1621ea16746be436ae77e38ce9, type: 3}
   weaponShootPosition: {x: 1.678, y: 0.234, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 48c559f1213fb104a9b62e8c3bad2f38, type: 2}

@@ -242,7 +242,7 @@ public class WeaponStatusUI : MonoBehaviour
     {
         if (weapon.weaponDetails.hasInfiniteAmmo)
         {
-            ammoRemainingText.text = "INFINITE AMMO";
+            ammoRemainingText.text = "无限 弹药";
         }
         else
         {
@@ -379,7 +379,7 @@ public class WeaponStatusUI : MonoBehaviour
     {
         while (true)
         {
-            reloadText.text = "RELOAD";
+            reloadText.text = "装填中";
             yield return new WaitForSeconds(0.3f);
             reloadText.text = "";
             yield return new WaitForSeconds(0.3f);

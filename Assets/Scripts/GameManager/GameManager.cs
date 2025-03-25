@@ -477,17 +477,17 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         yield return StartCoroutine(Fade(0f, 1f, 2f, new Color(0f, 0f, 0f, 0.4f)));
         
         //Display boss message
+        // yield return StartCoroutine(
+        //     DisplayMessageRoutine("WELL DONE " + GameResources.Instance.currentPlayer.playerName +
+        //                           "! YOU'VE SURVIVED ....SO FAR\n\nNOW FIND DEFEAT THE BOSS ....GOOD LUCK!",
+        //         Color.white, 5f));
+        
         yield return StartCoroutine(
-            DisplayMessageRoutine("WELL DONE " + GameResources.Instance.currentPlayer.playerName +
-                                  "! YOU'VE SURVIVED ....SO FAR\n\nNOW FIND DEFEAT THE BOSS ....GOOD LUCK!",
+            DisplayMessageRoutine(
+                "干得好，" + GameResources.Instance.currentPlayer.playerName + "！你已经活下来...到目前为止\n\n现在去找到并击败boss...祝你好运！",
                 Color.white, 5f));
 
         yield return StartCoroutine(Fade(1f, 0f, 2f, new Color(0f, 0f, 0f, 0.4f)));
-        
-        // yield return StartCoroutine(
-        //     DisplayMessageRoutine(
-        //         "干得好，" + GameResources.Instance.currentPlayer.playerName + "！你已经活下来...到目前为止\n\n现在去找到并击败boss...祝你好运！",
-        //         Color.white, 5f));
 
         //Debug.Log("Boss stage - find and destroy the boss");
     }
@@ -510,19 +510,19 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         yield return StartCoroutine(Fade(0f, 1f, 2f, new Color(0f, 0f, 0f, 0.4f)));
         
         //Display level completed
-        yield return StartCoroutine(DisplayMessageRoutine(
-            "WELL DONE " + GameResources.Instance.currentPlayer.playerName + "! \n\nYOU'VE SURVIVED THIS DUNGEON LEVEL",
-            Color.white, 5f));
-        
         // yield return StartCoroutine(DisplayMessageRoutine(
-        //     "干得好，" + GameResources.Instance.currentPlayer.playerName + "! \n\n你已经成功通过了这个地下城关卡！",
+        //     "WELL DONE " + GameResources.Instance.currentPlayer.playerName + "! \n\nYOU'VE SURVIVED THIS DUNGEON LEVEL",
         //     Color.white, 5f));
-
-        yield return StartCoroutine(DisplayMessageRoutine(
-            "COLLECT ANY LOOT ....THEN PRESS RETURN\n\nTO DESCEND FURTHER INTO THE DUNGEON", Color.white, 5f));
         
+        yield return StartCoroutine(DisplayMessageRoutine(
+            "干得好，" + GameResources.Instance.currentPlayer.playerName + "! \n\n你已经成功通过了这个地下城关卡！",
+            Color.white, 5f));
+
         // yield return StartCoroutine(DisplayMessageRoutine(
-        //     "收集任何战利品……然后按返回键\n\n深入地下城更深层", Color.white, 5f));
+        //     "COLLECT ANY LOOT ....THEN PRESS RETURN\n\nTO DESCEND FURTHER INTO THE DUNGEON", Color.white, 5f));
+        
+        yield return StartCoroutine(DisplayMessageRoutine(
+            "收集任何战利品……然后按返回键\n\n深入地下城更深层", Color.white, 5f));
         
         //Fade out canvas
         yield return StartCoroutine(Fade(1f, 0f, 2f, new Color(0f, 0f, 0f, 0.4f)));
@@ -593,8 +593,11 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         //Test if the score is in the rankings  测试该分数是否在排行榜内
         if (rank > 0 && rank <= Settings.numberOfHighScoresToSave)
         {
-            rankText = "YOUR SCORE IS RANKED" + rank.ToString("#0") + " IN THE TOP " +
-                       Settings.numberOfHighScoresToSave.ToString("#0");
+            // rankText = "YOUR SCORE IS RANKED" + rank.ToString("#0") + " IN THE TOP " +
+            //            Settings.numberOfHighScoresToSave.ToString("#0");
+            
+            rankText = "您的得分排名是" + rank.ToString("#0") + "，位于前 " +
+                       Settings.numberOfHighScoresToSave.ToString("#0") + " 名之内";
 
             string name = GameResources.Instance.currentPlayer.playerName;
 
@@ -607,14 +610,15 @@ public class GameManager : SingletonMonobehaviour<GameManager>
             HighScoreManager.Instance.AddScore(new Score()
             {
                 playerName = name,
-                levelDescription = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + " - " +
+                levelDescription = "等级 " + (currentDungeonLevelListIndex + 1).ToString() + " - " +
                                    GetCurrentDungeonLevel().levelName.ToUpper(),
                 playerScore = gameScore
             }, rank);
         }
         else
         {
-            rankText = "YOU SCORE ISN'T RANKED IN THE TOP " + Settings.numberOfHighScoresToSave.ToString("#0");
+            // rankText = "YOU SCORE ISN'T RANKED IN THE TOP " + Settings.numberOfHighScoresToSave.ToString("#0");
+            rankText = "您的得分未进入前 " + Settings.numberOfHighScoresToSave.ToString("#0") + " 名";
         }
 
         yield return new WaitForSeconds(1f);
@@ -623,24 +627,24 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         yield return StartCoroutine(Fade(0f, 1f, 2f, Color.black));
         
         //Display game won
-        yield return StartCoroutine(DisplayMessageRoutine(
-            "WELL DONE" + GameResources.Instance.currentPlayer.playerName + "! YOU HAVE DEFEATED THE DUNGEON",
-            Color.white, 3f));
-        
         // yield return StartCoroutine(DisplayMessageRoutine(
-        //     "干得好，" + GameResources.Instance.currentPlayer.playerName + "！你已经通关了地下城",
+        //     "WELL DONE" + GameResources.Instance.currentPlayer.playerName + "! YOU HAVE DEFEATED THE DUNGEON",
         //     Color.white, 3f));
-
+        
         yield return StartCoroutine(DisplayMessageRoutine(
-            "YOUR SCORE " + gameScore.ToString("###,###0") + "\n\n" + rankText, Color.white,
-            4f));
-        
-        // yield return StartCoroutine(DisplayMessageRoutine("你的得分 " + gameScore.ToString("###,###0"), Color.white,
-        //     4f));
+            "干得好，" + GameResources.Instance.currentPlayer.playerName + "！你已经通关了地下城",
+            Color.white, 3f));
 
-        yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART THE GAME", Color.white, 0f));
+        // yield return StartCoroutine(DisplayMessageRoutine(
+        //     "YOUR SCORE " + gameScore.ToString("###,###0") + "\n\n" + rankText, Color.white,
+        //     4f));
         
-        // yield return StartCoroutine(DisplayMessageRoutine("按下回车重新开始游戏", Color.white, 0f));
+        yield return StartCoroutine(DisplayMessageRoutine("你的得分 " + gameScore.ToString("###,###0"), Color.white,
+            4f));
+
+        // yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART THE GAME", Color.white, 0f));
+        
+        yield return StartCoroutine(DisplayMessageRoutine("按下回车重新开始游戏", Color.white, 0f));
         
         //Set game state to restart game    将游戏状态设置为重启游戏
         gameState = GameState.restartGame;
@@ -669,8 +673,12 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         //Test if the score is in the rankings      测试该分数是否在排行榜内
         if (rank > 0 && rank <= Settings.numberOfHighScoresToSave)
         {
-            rankText = "YOUR SCORE IS RANKED" + rank.ToString("#0") + " IN THE TOP " +
-                       Settings.numberOfHighScoresToSave.ToString("#0");
+            // rankText = "YOUR SCORE IS RANKED" + rank.ToString("#0") + " IN THE TOP " +
+            //            Settings.numberOfHighScoresToSave.ToString("#0");
+            
+            rankText = "您的得分排名是" + rank.ToString("#0") + "，位于前 " +
+                       Settings.numberOfHighScoresToSave.ToString("#0") + " 名之内";
+
 
             string name = GameResources.Instance.currentPlayer.playerName;
 
@@ -683,14 +691,15 @@ public class GameManager : SingletonMonobehaviour<GameManager>
             HighScoreManager.Instance.AddScore(new Score()
             {
                 playerName = name,
-                levelDescription = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + " - " +
+                levelDescription = "等级 " + (currentDungeonLevelListIndex + 1).ToString() + " - " +
                                    GetCurrentDungeonLevel().levelName.ToUpper(),
                 playerScore = gameScore
             }, rank);
         }
         else
         {
-            rankText = "YOU SCORE ISN'T RANKED IN THE TOP " + Settings.numberOfHighScoresToSave.ToString("#0");
+            // rankText = "YOU SCORE ISN'T RANKED IN THE TOP " + Settings.numberOfHighScoresToSave.ToString("#0");
+            rankText = "您的得分未进入前 " + Settings.numberOfHighScoresToSave.ToString("#0") + " 名";
         }
         
         //Wait 1 seconds
@@ -707,24 +716,24 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
         
         //Display game lost
-        yield return StartCoroutine(DisplayMessageRoutine(
-            "BAD LUCK " + GameResources.Instance.currentPlayer.playerName + "! YOU HAVE SUCCUMBED TO THE DUNGEON",
-            Color.white, 2f));
-        
         // yield return StartCoroutine(DisplayMessageRoutine(
-        //     "很遗憾 " + GameResources.Instance.currentPlayer.playerName + "！你已在地下城中陨命",
+        //     "BAD LUCK " + GameResources.Instance.currentPlayer.playerName + "! YOU HAVE SUCCUMBED TO THE DUNGEON",
         //     Color.white, 2f));
-
-        yield return StartCoroutine(DisplayMessageRoutine(
-            "YOUR SCORED " + gameScore.ToString("###,###0") + "\n\n" + rankText, Color.white,
-            4f));
         
-        // yield return StartCoroutine(DisplayMessageRoutine("你的得分 " + gameScore.ToString("###,###0"), Color.white,
+        yield return StartCoroutine(DisplayMessageRoutine(
+            "很遗憾 " + GameResources.Instance.currentPlayer.playerName + "！你已在地下城中陨命",
+            Color.white, 2f));
+
+        // yield return StartCoroutine(DisplayMessageRoutine(
+        //     "YOUR SCORED " + gameScore.ToString("###,###0") + "\n\n" + rankText, Color.white,
         //     4f));
         
-        yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART GAME", Color.white, 0f));
+        yield return StartCoroutine(DisplayMessageRoutine("你的得分 " + gameScore.ToString("###,###0"), Color.white,
+            4f));
         
-        //yield return StartCoroutine(DisplayMessageRoutine("按回车重新开始游戏", Color.white, 0f));
+        // yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART GAME", Color.white, 0f));
+        
+        yield return StartCoroutine(DisplayMessageRoutine("按回车重新开始游戏", Color.white, 0f));
 
         //Set game state to restart game    将游戏状态设置为重启游戏
         gameState = GameState.restartGame;
@@ -791,7 +800,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         
         GetPlayer().playerControl.DisablePlayer();
 
-        string messageText = "LEVEL " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" +
+        string messageText = "等级 " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" +
                              dungeonLevelList[currentDungeonLevelListIndex].levelName.ToUpper();
         
         yield return StartCoroutine(DisplayMessageRoutine(messageText,Color.white, 2f));

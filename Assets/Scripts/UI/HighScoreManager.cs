@@ -10,8 +10,8 @@ public class HighScoreManager : SingletonMonobehaviour<HighScoreManager>
     protected override void Awake()
     {
         base.Awake();
-
-        // ResetHighScores();
+        
+        //ResetHighScores();
         LoadScores();
     }
 
