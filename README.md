@@ -1,6 +1,6 @@
 # Unity Project README
 
-![Project Banner](https://your-image-url.com/banner.png)
+
 
 ## 🎮 地下城枪手
 
@@ -16,10 +16,4 @@
 ✅ **音效管理**： Unity Audio  
 ✅ **AI 行为**：FSM / AStar/ NavMesh  
 
-## 🖼️ 截图预览
-
-
-
-### 1️⃣ 克隆仓库
-```sh
 
