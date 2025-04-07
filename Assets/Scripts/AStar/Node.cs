@@ -40,6 +40,4 @@ public class Node : IComparable<Node>
 
         return compare;
     }
-    
-    
 }

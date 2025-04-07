@@ -66,6 +66,4 @@ public class RoomEnemySpawnParameters
     #endregion
     
     public int maxSpawnInterval;
-    
-    
 }
