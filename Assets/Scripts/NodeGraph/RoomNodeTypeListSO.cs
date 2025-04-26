@@ -10,6 +10,7 @@ public class RoomNodeTypeListSO : ScriptableObject
     [Header("ROOM NODE TYPE LIST")]
     #endregion
     #region TOOltip
+    //该列表应包含游戏中所有的 RoomNodeTypeSO，它用于替代枚举（enum）
     [Tooltip("This list should be populated with all the RoomNodeTypeSO for the game - it is used instead of an enum")]
     #endregion
     public List<RoomNodeTypeSO> list;
